@@ -1,46 +1,49 @@
-[gd_scene load_steps=14 format=3 uid="uid://bnaqy8m6o4sl4"]
+[gd_scene load_steps=17 format=3 uid="uid://cv0jvc6g0gi3"]
 
-[ext_resource type="Script" path="res://src/Player/Player.gd" id="1_cdded"]
-[ext_resource type="Texture2D" uid="uid://c74m5pgpdl7o7" path="res://src/Player/digger.png" id="1_ii2pd"]
+[ext_resource type="Script" path="res://src/Scenes/Player/Player.gd" id="1_cn4la"]
+[ext_resource type="Texture2D" uid="uid://c74m5pgpdl7o7" path="res://src/Scenes/Player/digger.png" id="2_nte1r"]
+[ext_resource type="Script" path="res://src/Scenes/Player/InventoryManager.gd" id="3_gr3gd"]
+[ext_resource type="Script" path="res://src/Scenes/Player/CargoManager.gd" id="4_vaerd"]
+[ext_resource type="Script" path="res://src/Scenes/Player/ComponentManager.gd" id="5_ufsp0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7i3pd"]
 radius = 22.0
 height = 44.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xjlok"]
-atlas = ExtResource( "1_ii2pd" )
+atlas = ExtResource( "2_nte1r" )
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_juwmi"]
-atlas = ExtResource( "1_ii2pd" )
+atlas = ExtResource( "2_nte1r" )
 region = Rect2(512, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3j5pj"]
-atlas = ExtResource( "1_ii2pd" )
+atlas = ExtResource( "2_nte1r" )
 region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rtj1i"]
-atlas = ExtResource( "1_ii2pd" )
+atlas = ExtResource( "2_nte1r" )
 region = Rect2(768, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1jg3b"]
-atlas = ExtResource( "1_ii2pd" )
+atlas = ExtResource( "2_nte1r" )
 region = Rect2(896, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2sjt7"]
-atlas = ExtResource( "1_ii2pd" )
+atlas = ExtResource( "2_nte1r" )
 region = Rect2(1024, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qn6vd"]
-atlas = ExtResource( "1_ii2pd" )
+atlas = ExtResource( "2_nte1r" )
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y5gqq"]
-atlas = ExtResource( "1_ii2pd" )
+atlas = ExtResource( "2_nte1r" )
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_80vjn"]
-atlas = ExtResource( "1_ii2pd" )
+atlas = ExtResource( "2_nte1r" )
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3p2ac"]
@@ -62,7 +65,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource( "1_cdded" )
+script = ExtResource( "1_cn4la" )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -75,5 +78,13 @@ shape = SubResource( "CapsuleShape2D_7i3pd" )
 texture_filter = 1
 frames = SubResource( "SpriteFrames_3p2ac" )
 animation = &"move"
-frame = 1
 playing = true
+
+[node name="InventoryManager" type="Node" parent="."]
+script = ExtResource( "3_gr3gd" )
+
+[node name="CargoManager" type="Node" parent="."]
+script = ExtResource( "4_vaerd" )
+
+[node name="ComponentManager" type="Node" parent="."]
+script = ExtResource( "5_ufsp0" )

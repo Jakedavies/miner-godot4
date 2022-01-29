@@ -2,16 +2,16 @@
 
 importer="texture"
 type="StreamTexture2D"
-uid="uid://blih5o8mvcxnr"
-path="res://.godot/imported/spritesheet.png-9b14a59beb5dbde050bcdc2e0e55292a.stex"
+uid="uid://c74m5pgpdl7o7"
+path="res://.godot/imported/digger.png-639ad0e38a0d1653b6b8a75f5cd23f91.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/World/spritesheet.png"
-dest_files=["res://.godot/imported/spritesheet.png-9b14a59beb5dbde050bcdc2e0e55292a.stex"]
+source_file="res://src/Scenes/Player/digger.png"
+dest_files=["res://.godot/imported/digger.png-639ad0e38a0d1653b6b8a75f5cd23f91.stex"]
 
 [params]
 

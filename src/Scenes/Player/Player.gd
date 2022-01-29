@@ -6,6 +6,10 @@ const JUMP_FORCE = -400.0
 # Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+var inventory_manager = InventoryManager.new()
+
+func _ready():
+	pass
 
 func _physics_process(delta):
 	# Add the gravity.

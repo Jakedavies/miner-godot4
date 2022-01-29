@@ -8,6 +8,28 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "Node",
+"class": &"InventoryManager",
+"language": &"GDScript",
+"path": "res://src/Scenes/Player/InventoryManager.gd"
+}, {
+"base": "Resource",
+"class": &"Item",
+"language": &"GDScript",
+"path": "res://src/Items/Item.gd"
+}, {
+"base": "Node",
+"class": &"Items",
+"language": &"GDScript",
+"path": "res://src/Items/ItemTypes.gd"
+}]
+_global_script_class_icons={
+"InventoryManager": "",
+"Item": "",
+"Items": ""
+}
+
 [application]
 
 config/name="Godot 4 -miner"
