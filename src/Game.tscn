@@ -1,10 +1,174 @@
-[gd_scene load_steps=3 format=3 uid="uid://vfp8gj7assge"]
+[gd_scene load_steps=11 format=3 uid="uid://vfp8gj7assge"]
 
 [ext_resource type="PackedScene" uid="uid://woc2gmu2nakm" path="res://src/Scenes/World/World.tscn" id="1_uvsap"]
 [ext_resource type="PackedScene" uid="uid://cv0jvc6g0gi3" path="res://src/Scenes/Player/Player.tscn" id="2_ghl2y"]
+[ext_resource type="Script" path="res://src/Scenes/Player/InventoryManager.gd" id="3_5c61f"]
+[ext_resource type="Script" path="res://src/Scenes/Player/CargoManager.gd" id="4_k1sbk"]
+[ext_resource type="Script" path="res://src/Scenes/Player/ComponentManager.gd" id="5_xp5gt"]
+[ext_resource type="Texture2D" uid="uid://cwlserygf1ll0" path="res://assets/PNG/Cell125x121px.png" id="6_4jgj6"]
+[ext_resource type="Shader" path="res://src/Game.gdshader" id="6_lrnn2"]
+[ext_resource type="Texture2D" uid="uid://d4c15dfsvcd2h" path="res://assets/PNG/ButtonPanel.png" id="7_syeoo"]
+[ext_resource type="Texture2D" uid="uid://b8spkrkwb10ss" path="res://assets/PNG/Panel1_NoOpacity592x975px.png" id="8_3hinx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fbmhi"]
+shader = ExtResource( "6_lrnn2" )
+shader_param/line_thickness = null
+shader_param/sin_frequency = null
+shader_param/sin_offset = null
+shader_param/light_offset = null
 
 [node name="Game" type="Node2D"]
 
 [node name="World" parent="." instance=ExtResource( "1_uvsap" )]
 
 [node name="Player" parent="." instance=ExtResource( "2_ghl2y" )]
+
+[node name="InventoryManager" type="Node" parent="."]
+script = ExtResource( "3_5c61f" )
+
+[node name="CargoManager" type="Node" parent="."]
+script = ExtResource( "4_k1sbk" )
+
+[node name="ComponentManager" type="Node" parent="."]
+script = ExtResource( "5_xp5gt" )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ActionBar" type="MarginContainer" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -75.0
+offset_right = 200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ActionBar"]
+offset_right = 400.0
+offset_bottom = 75.0
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ActionBar/MarginContainer"]
+offset_left = 25.0
+offset_top = 10.0
+offset_right = 375.0
+offset_bottom = 65.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/ActionBar/MarginContainer/HBoxContainer"]
+texture_filter = 1
+material = SubResource( "ShaderMaterial_fbmhi" )
+offset_right = 55.0
+offset_bottom = 55.0
+rect_min_size = Vector2(40, 40)
+size_flags_horizontal = 3
+texture = ExtResource( "6_4jgj6" )
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="CanvasLayer/ActionBar/MarginContainer/HBoxContainer"]
+texture_filter = 1
+offset_left = 59.0
+offset_right = 114.0
+offset_bottom = 55.0
+rect_min_size = Vector2(40, 40)
+size_flags_horizontal = 3
+texture = ExtResource( "6_4jgj6" )
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="CanvasLayer/ActionBar/MarginContainer/HBoxContainer"]
+texture_filter = 1
+offset_left = 118.0
+offset_right = 173.0
+offset_bottom = 55.0
+rect_min_size = Vector2(40, 40)
+size_flags_horizontal = 3
+texture = ExtResource( "6_4jgj6" )
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="CanvasLayer/ActionBar/MarginContainer/HBoxContainer"]
+texture_filter = 1
+offset_left = 177.0
+offset_right = 232.0
+offset_bottom = 55.0
+rect_min_size = Vector2(40, 40)
+size_flags_horizontal = 3
+texture = ExtResource( "6_4jgj6" )
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="NinePatchRect5" type="NinePatchRect" parent="CanvasLayer/ActionBar/MarginContainer/HBoxContainer"]
+texture_filter = 1
+offset_left = 236.0
+offset_right = 291.0
+offset_bottom = 55.0
+rect_min_size = Vector2(40, 40)
+size_flags_horizontal = 3
+texture = ExtResource( "6_4jgj6" )
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="CanvasLayer/ActionBar/MarginContainer/HBoxContainer"]
+texture_filter = 1
+offset_left = 295.0
+offset_right = 350.0
+offset_bottom = 55.0
+rect_min_size = Vector2(40, 40)
+size_flags_horizontal = 3
+texture = ExtResource( "6_4jgj6" )
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/ActionBar"]
+texture_filter = 1
+offset_right = 400.0
+offset_bottom = 75.0
+texture = ExtResource( "7_syeoo" )
+patch_margin_left = 20
+patch_margin_top = 3
+patch_margin_right = 20
+patch_margin_bottom = 3
+
+[node name="Inventory" type="MarginContainer" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -150.0
+offset_right = 250.0
+offset_bottom = 150.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Inventory"]
+offset_right = 500.0
+offset_bottom = 300.0
+texture = ExtResource( "8_3hinx" )
+patch_margin_left = 3
+patch_margin_top = 60
+patch_margin_right = 3
+patch_margin_bottom = 60
